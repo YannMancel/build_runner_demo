@@ -1,0 +1,27 @@
+
+targets:
+  $default:
+    builders:
+      build_runner_demo|copy_with_Builder:
+        enabled: True
+
+builders:
+
+  # It is `SharedPartBuilder` instance.
+  #
+  # `build_extensions` set to a `NAME.g.part` file.
+  #    - NAME corresponds to the second argument to the SharedPartBuilder, called `partId`.
+  #    - `.g.part` is the extension expected of SharedPartBuilder.
+  #
+  # `build_to: cache` - the output is not put directly into the project
+  #
+  # `applies_builders` - uses the `combining_builder` from `source_gen` to
+  #   combine the parts from each builder into one part file.
+  copy_with_Builder:
+    target: ":build_runner_demo"
+    import: "package:build_runner_demo/builders/copy_with_builder.dart"
+    builder_factories: ["copyWithBuilder"]
+    build_extensions: {".dart": [".copyWith.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
