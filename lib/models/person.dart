@@ -7,12 +7,12 @@ part 'person.g.dart';
 // Warning: Only this configuration can be build with success with build_runner.
 @immutable
 @CopyWith()
-class Person<T extends Object> {
+class Person<T extends String> {
   const Person({
     required this.firstName,
     required this.lastName,
   });
 
-  final String firstName;
+  final T firstName;
   final String lastName;
 }

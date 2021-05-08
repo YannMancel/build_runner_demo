@@ -58,8 +58,7 @@ class CopyWithGenerator extends GeneratorForAnnotation<CopyWith> {
 
     final typeParameterNames = _getTypeParameters(element: element);
 
-    final input =
-    element.fields.map((e) => '${e.type}? ${e.name},').join('\n');
+    final input = element.fields.map((e) => '${e.type}? ${e.name},').join('\n');
 
     final output = element.fields
         .map((e) => '${e.name}: ${e.name} ?? this.${e.name},')

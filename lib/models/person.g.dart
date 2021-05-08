@@ -6,10 +6,10 @@ part of 'person.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension PersonCopyWith<T extends Object> on Person<T> {
+extension PersonCopyWith<T extends String> on Person<T> {
   /// Creates a copy of [Person] instance.
   Person<T> copyWith({
-    String? firstName,
+    T? firstName,
     String? lastName,
   }) {
     return Person<T>(
