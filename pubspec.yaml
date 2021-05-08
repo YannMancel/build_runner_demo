@@ -1,0 +1,29 @@
+name: build_runner_demo
+description: A new Flutter application.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  # Generators
+  build: ^2.0.1
+  source_gen: ^1.0.0
+  analyzer: ^1.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Generators
+  build_runner: ^2.0.2
+
+flutter:
+  uses-material-design: true
